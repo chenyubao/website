@@ -165,7 +165,7 @@
                     <a href="/News/views/nid/154"><img alt="“浙江6频道彩虹计划”欢欢家纺1300条暖芯冬被献爱心" src="/Uploads/20151214/20151214162248_8383.jpg"></a>
                 </div>
                 <div class="title_bt">
-                    <p class="name">“浙江6频道彩虹计划”欢欢家纺1300条暖芯冬被献爱心</p>
+                    <p class="name">“浙江6频道彩虹计划”欢欢家纺1300条暖芯冬被献爱心------</p>
                     <span class="ly" style="display:none">0</span>
                 </div>
             </div>
