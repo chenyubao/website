@@ -1,0 +1,90 @@
+<div class="row">
+    <div class="col-lg-3">
+        <div class="left-bar">
+            <ul class="nav bs-sidenav nav-stacked">
+                <li class="active" ><a ng-click="showProductList()">产品列表</a></li>
+                <li><a ng-click="showNewProduct()">添加产品</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-md-9">
+        <div class="bs-docs-section" id="productList" ng-show="viewProductList">
+            <div class="page-header">
+                <h3>所有产品</h3>
+            </div>
+            <div class="row page-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>产品名字</th>
+                            <th>所属类别</th>
+                            <th>图片</th>
+                            <th>描述</th>
+                            <th>修改</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="p in products">
+                            <td>{{p.id}}</td>
+                            <td>{{p.name}}</td>
+                            <td>{{p.category}}</td>
+                            <td><img ng-src="{{p.imageurl | defaultImage}}" width="120px" height="100px"></td>
+                            <td><textarea rows="4" cols="29">{{p.description}}</textarea></td>
+                            <td>
+                                <input type="button" value="修改" ng-click="modifyProduct(p.id)" class="btn btn-success">
+                                <input type="button" value="删除" ng-click="deleteProduct(p)" class="btn btn-danger">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <ul class="pager">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">上一页</a></li>
+                    <li><a href="#">下一页</a></li>
+                    <li><a href="#">尾页</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bs-docs-section" id="newproduct" ng-show="viewNewProduct">
+            <div class="page-header">
+                <h3>添加产品</h3>
+            </div>
+            <div class="row page-body">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label for="productName" class="col-sm-2 control-label">产品名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="product.name" class="form-control" id="productName" placeholder="产品名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="category" class="col-sm-2 control-label">产品类别</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="product.category" class="form-control" id="category" placeholder="产品类别">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="col-sm-2 control-label">产品图片</label>
+                        <div class="col-sm-10">
+                            <input type="file" ng-model="product.image" class="form-control" id="image" placeholder="产品图片">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="desc" class="col-sm-2 control-label">产品描述</label>
+                        <div class="col-sm-10">
+                            <textarea rows="8" ng-model="product.description" cols="35" class="form-control" placeholder="产品描述" id="desc"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" ng-click = "addProduct()" class="btn btn-default">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
