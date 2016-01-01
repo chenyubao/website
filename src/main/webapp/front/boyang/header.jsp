@@ -10,15 +10,10 @@
         <ul>
             <li><a href="/">首页</a></li>
             <li><a href="/front/boyang/productList.jsp">产品展示</a></li>
-            <li><a href="/About">关于欢欢</a></li>
-            <li><a href="/News">企业动态</a></li>
-            <li><a href="/Join">招商加盟</a></li>
-            <li><a href="/Customers">团购专区</a></li>
-            <li><a href="/Vip">会员专区</a></li>
-            <li><a href="/Jobs">人才战略</a></li>
+            <li><a href="/front/boyang/about.jsp">关于欢欢</a></li>
+            <li><a href="/front/boyang/companyNews.jsp">企业动态</a></li>
+            <li><a href="/front/boyang/attractInvestment.jsp">招商加盟</a></li>
             <li><a href="/Contact">联系我们</a></li>
-            <li><a href="/Security">防伪中心</a></li>
-            <li><a href="/Weixin">BEYOND微信</a></li>
             <!--<li><a href="http://www.beyond.cn/" target="_blank">网上商城</a></li>-->
         </ul>
     </div>

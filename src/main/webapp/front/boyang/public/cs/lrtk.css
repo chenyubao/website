@@ -1,0 +1,11 @@
+.www51buycom {  width:463px; height:296px;  position: relative; overflow:hidden; }
+
+.www51buycom .num { overflow:hidden; height: 18px; position: absolute; bottom:20px; right: 8px; zoom:1; z-index:3 }
+.www51buycom .num li { width: 18px; height: 18px; line-height: 18px; text-align: center;  font-family: "微软雅黑", Arial; color: #676a5d; background: #1e1f19;  cursor:pointer; float: left; }
+.www51buycom .num li.on { background: #050505; } /*当前项*/
+
+/*上一个  下一个*/
+.www51buycom .prev,
+.www51buycom .next { display: none; width: 40px; height: 100px; background: url(../images/btn.png) no-repeat; position: absolute; top: 115px;}
+.www51buycom .prev { left: 0; }
+.www51buycom .next { right: 0; background-position: right }
