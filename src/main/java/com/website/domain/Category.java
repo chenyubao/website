@@ -6,9 +6,9 @@ import javax.persistence.*;
  * Created by chenyubao on 15/12/7.
  */
 @Entity
-@Table(name="menu")
+@Table(name="Category")
 public class Category {
-    private int id;
+    private long id;
     private String name;
     private Integer isParent;
     private Integer parentId;
@@ -16,11 +16,11 @@ public class Category {
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -64,29 +64,4 @@ public class Category {
         this.imageUrl = imageUrl;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Category category = (Category) o;
-
-        if (id != category.id) return false;
-        if (name != null ? !name.equals(category.name) : category.name != null) return false;
-        if (isParent != null ? !isParent.equals(category.isParent) : category.isParent != null) return false;
-        if (parentId != null ? !parentId.equals(category.parentId) : category.parentId != null) return false;
-        if (imageUrl != null ? !imageUrl.equals(category.imageUrl) : category.imageUrl != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (isParent != null ? isParent.hashCode() : 0);
-        result = 31 * result + (parentId != null ? parentId.hashCode() : 0);
-        result = 31 * result + (imageUrl != null ? imageUrl.hashCode() : 0);
-        return result;
-    }
 }

@@ -6,20 +6,20 @@ import javax.persistence.*;
  * Created by chenyubao on 15/12/7.
  */
 @Entity
-@Table(name="menu")
+@Table(name="productProperty")
 public class ProductProperty {
-    private int id;
+    private long id;
     private Integer productId;
     private String name;
     private String value;
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -53,27 +53,4 @@ public class ProductProperty {
         this.value = value;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ProductProperty that = (ProductProperty) o;
-
-        if (id != that.id) return false;
-        if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;
-        if (name != null ? !name.equals(that.name) : that.name != null) return false;
-        if (value != null ? !value.equals(that.value) : that.value != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (productId != null ? productId.hashCode() : 0);
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (value != null ? value.hashCode() : 0);
-        return result;
-    }
 }

@@ -13,7 +13,7 @@
             <li><a href="/front/boyang/about.jsp">关于欢欢</a></li>
             <li><a href="/front/boyang/companyNews.jsp">企业动态</a></li>
             <li><a href="/front/boyang/attractInvestment.jsp">招商加盟</a></li>
-            <li><a href="/Contact">联系我们</a></li>
+            <li><a href="/front/boyang/contacts.jsp">联系我们</a></li>
             <!--<li><a href="http://www.beyond.cn/" target="_blank">网上商城</a></li>-->
         </ul>
     </div>

@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="menu")
 public class Menu {
-    private int id;
+    private long id;
     private String name;
     private Integer parentId;
     private Integer position;
@@ -16,11 +16,11 @@ public class Menu {
 
     @Id
     @Column(name = "id", nullable = false, insertable = true, updatable = true)
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -64,29 +64,4 @@ public class Menu {
         this.image = image;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Menu menu = (Menu) o;
-
-        if (id != menu.id) return false;
-        if (name != null ? !name.equals(menu.name) : menu.name != null) return false;
-        if (parentId != null ? !parentId.equals(menu.parentId) : menu.parentId != null) return false;
-        if (position != null ? !position.equals(menu.position) : menu.position != null) return false;
-        if (image != null ? !image.equals(menu.image) : menu.image != null) return false;
-
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (parentId != null ? parentId.hashCode() : 0);
-        result = 31 * result + (position != null ? position.hashCode() : 0);
-        result = 31 * result + (image != null ? image.hashCode() : 0);
-        return result;
-    }
 }
