@@ -3,10 +3,12 @@ function ProductController($scope, $http){
     $scope.currentPage = 1;
     $scope.totalPage = 1;
     $http.get("/web/product/getAllProductList/0").success(function(resp){
+        console.log(resp);
         $scope.products = resp;
     });
 
     $http.get("/web/product/getTotalPage").success(function(resp){
+        console.log(resp);
         $scope.totalPage = resp;
     });
 
@@ -32,6 +34,7 @@ function ProductController($scope, $http){
 
     this.goToPage = function(pageNo){
         $http.get("/web/product/getAllProductList/" + (pageNo-1)).success(function(resp){
+            console.log(resp);
             $scope.products = resp;
         });
     };

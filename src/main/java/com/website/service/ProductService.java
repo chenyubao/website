@@ -95,4 +95,8 @@ public class ProductService {
         productRepository.delete(id);
         return p;
     }
+
+    public long getTotalPage() {
+        return productRepository.count()/Constant.PAGE_SIZE + 1;
+    }
 }

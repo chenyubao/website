@@ -27,6 +27,12 @@ public class ProductController {
     }
 
     @ResponseBody
+    @RequestMapping(value = "/getTotalPage", method = RequestMethod.GET)
+    public long getTotalPage(){
+        return productService.getTotalPage();
+    }
+
+    @ResponseBody
     @RequestMapping(value = "/getProductListByCategoryId/{id}/{page}", method = RequestMethod.GET)
     public List<Product> getProductListByCategoryId(@PathVariable("id") long categoryId,
                                                     @PathVariable("page") int pageNo){

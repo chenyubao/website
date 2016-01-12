@@ -1,7 +1,7 @@
 package com.website.service;
 
-import com.website.domain.CompanyIntroduce;
-import com.website.repository.ICompanyIntroduce;
+import com.website.domain.CompanyNews;
+import com.website.repository.ICompanyNews;
 import com.website.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
@@ -15,29 +15,29 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class CompanyIntroduceService {
+public class CompanyNewsService {
 
     @Autowired
-    private ICompanyIntroduce cnRepository;
+    private ICompanyNews cnRepository;
 
-    public List<CompanyIntroduce> findCompanyIntroduceList(int pageNo) {
+    public List<CompanyNews> findCompanyNewsList(int pageNo) {
         return cnRepository.findAll(new PageRequest(pageNo, Constant.PAGE_SIZE)).getContent();
     }
 
-    public CompanyIntroduce findCompanyIntroduceById(long id) {
+    public CompanyNews findCompanyNewsById(long id) {
         return cnRepository.findOne(id);
     }
 
-    public CompanyIntroduce addCI(CompanyIntroduce attractInvestment) {
+    public CompanyNews addCN(CompanyNews attractInvestment) {
         return cnRepository.save(attractInvestment);
     }
 
-    public CompanyIntroduce updateCI(CompanyIntroduce attractInvestment) {
+    public CompanyNews updateCN(CompanyNews attractInvestment) {
         return cnRepository.save(attractInvestment);
     }
 
-    public CompanyIntroduce deleteCI(long id) {
-        CompanyIntroduce cn = cnRepository.findOne(id);
+    public CompanyNews deleteCN(long id) {
+        CompanyNews cn = cnRepository.findOne(id);
         if (cn != null){
             cnRepository.delete(id);
         }

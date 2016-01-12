@@ -1,40 +1,23 @@
 function ProductController($scope, $http){
-    var self = this;
-    $scope.currentPage = 1;
-    $scope.totalPage = 1;
-    $http.get("/web/product/getAllProductList/0").success(function(resp){
-        $scope.products = resp;
-    });
-
-    $http.get("/web/product/getTotalPage").success(function(resp){
-        $scope.totalPage = resp;
-    });
-
-    $scope.goToFirstPage = function(){
-        $scope.currentPage = 1;
-        self.goToPage($scope.currentPage);
-    };
-
-    $scope.goToNextPage = function(){
-        $scope.currentPage < $scope.totalPage?$scope.currentPage++ : $scope.currentPage;
-        self.goToPage($scope.currentPage);
-    };
-
-    $scope.goToLastPage = function(){
-        $scope.currentPage > 1 ?$scope.currentPage-- : $scope.currentPage;
-        self.goToPage($scope.currentPage);
-    };
-
-    $scope.goToEndPage = function(){
-        $scope.currentPage = $scope.totalPage;
-        self.goToPage($scope.currentPage);
-    };
-
-    this.goToPage = function(pageNo){
-        $http.get("/web/product/getAllProductList/" + (pageNo-1)).success(function(resp){
-            $scope.products = resp;
-        });
-    };
+    $scope.products= [{
+        id : 1,
+        name : "棉被",
+        imageurl : "/resources/image/default.jpg",
+        category : "床上用品",
+        description : '好好好'
+    },{
+        id : 2,
+        name : "枕头",
+        imageurl : "",
+        category : "床上用品",
+        description : '好好好'
+    },{
+        id : 3,
+        name : "床单",
+        imageurl : "/resources/image/default.jpg",
+        category : "床上用品",
+        description : '好好好'
+    }];
 
     $scope.modifyProduct = function(id){
         console.log(id);
